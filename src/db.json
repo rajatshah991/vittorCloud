@@ -1,0 +1,35 @@
+{
+  "user": [
+    {
+      "username": "rjshah",
+      "password": "Test@1234",
+      "token": "3ghjgh76868ujnbnnmbn^&&&88bnbnnmmnbm"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "1st book",
+      "articalNo": "G01",
+      "price": 500
+    },
+    {
+      "name": "Rajat",
+      "articalNo": "hjkhjk",
+      "price": "500",
+      "id": 2
+    },
+    {
+      "name": "Rajat",
+      "articalNo": "Shah",
+      "price": "450",
+      "id": 3
+    },
+    {
+      "name": "Rajat",
+      "articalNo": "Shah",
+      "price": "450",
+      "id": 4
+    }
+  ]
+}

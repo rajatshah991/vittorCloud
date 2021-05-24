@@ -1,0 +1,27 @@
+<div class="sucess_message" *ngIf="data.snackType == 'Done'">
+    <div class="alert alert-success" role="alert">
+      <div class="sank_bar">
+        <div class="img_sucess">
+          <img src = 'assets/img/success.svg'>
+        </div>
+        <div class="message"> {{data.message}}</div>
+      </div>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeSnackbar()">
+        <span aria-hidden="true"><img src="assets/img/close-24px.svg" alt="" title=""></span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="sucess_message" *ngIf="data.snackType == 'Warning'" >
+    <div class="alert alert-unsuccess" role="alert">
+      <div class="sank_bar">
+        <div class="img_sucess">
+          <img src = 'assets/img/unsuccess.svg'>
+        </div>
+        <div class="message"> {{data.message}}</div>
+      </div>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeSnackbar()">
+        <span aria-hidden="true"><img src="assets/img/close-unsuccess.svg" alt="" title=""></span>
+      </button>
+    </div>
+  </div>
