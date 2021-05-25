@@ -12,6 +12,7 @@ export class CommonService {
   apiResponse = 0;
   backGroundApi = false;
   redirectUrl = "";
+  spinner = false;
 
   constructor(
     private router: Router,
@@ -19,15 +20,15 @@ export class CommonService {
   ) {
   }
 
-  showSpinner() {
-    // this.settings.loadingSpinner = true;
+  showSpinner(): void {
+    this.spinner = true;
   }
 
-  hideSpinner() {
-    // this.settings.loadingSpinner = false;
+  hideSpinner(): void {
+    this.spinner = false;
   }
 
-  openSnackbar(message: string, type: string) {
+  openSnackbar(message: string, type: string): void {
     this.snackbar.openFromComponent(SnackbarComponent, {
       duration: 5000,
       horizontalPosition: "center",
@@ -36,31 +37,20 @@ export class CommonService {
     });
   }
 
-  closeSnackbar() {
+  closeSnackbar(): void {
     this.snackbar.dismiss();
   }
 
-  checkBackgroundApi() {
+  checkBackgroundApi(): void {
     if (this.backGroundApi === true) {
       this.backGroundApi = false;
     }
   }
 
-
-  resetApiCount() {
+  resetApiCount(): void {
     this.apiCall = 0;
     this.apiResponse = 0;
   }
-
-
-  checkForMobileView(): boolean {
-    if (window.innerWidth <= 600) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
 }
 
 

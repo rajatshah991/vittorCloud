@@ -36,7 +36,7 @@ export class ProductListComponent implements OnInit,OnChanges {
   }
 
   search(event:any):void { 
-
+    console.log(event.target.value);
     if(event.target.value.length>0) {
     this.searchTerm.next(event.target.value)
     this.searchTerm
