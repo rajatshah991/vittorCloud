@@ -1,6 +1,7 @@
 import { OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/shared/services/common.service';
@@ -16,12 +17,13 @@ export class ProductAddComponent implements OnInit,OnDestroy {
   productForm:FormGroup;
   subscription: Subscription;
 
-  constructor(private router: Router,private commonService:CommonService,private productService:ProductService,private formBuilder: FormBuilder) {
+  constructor(private router: Router,private title:Title,private commonService:CommonService,private productService:ProductService,private formBuilder: FormBuilder) {
     this.commonService.apiCall++;
    }
 
 
   ngOnInit() {
+    this.title.setTitle('ProductAdd');
     this.commonService.resetApiCount();
     this.initProductAddForm();
    

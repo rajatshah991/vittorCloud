@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, OnChanges } from '@angular/core';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
@@ -21,11 +22,12 @@ export class ProductListComponent implements OnInit,OnChanges {
   searchVal = '';
   productListSubscription:Subscription;
   searchSubscription:Subscription;
-  constructor(private router:Router ,private productService: ProductService,private cd: ChangeDetectorRef) {
+  constructor(private router:Router, private title: Title ,private productService: ProductService,private cd: ChangeDetectorRef) {
    }
 
   ngOnInit(): void {
     this.getAllProduct();
+    this.title.setTitle('Product-list');
   }
 
   ngOnChanges():void {
